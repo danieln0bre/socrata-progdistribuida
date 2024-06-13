@@ -1,2 +1,4 @@
 pandas
 sodapy
+Flask
+pip freeze > requirements.txt
