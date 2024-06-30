@@ -13,5 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Define environment variable
 ENV NAME World
 
-# Run accidents.py when the container launches
-CMD ["python", "accidents.py"]
+# Install pymongo[srv]
+RUN python -m pip install "pymongo[srv]"

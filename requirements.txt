@@ -1,3 +1,4 @@
 pandas
 sodapy
 Flask
+pymongo[srv]
