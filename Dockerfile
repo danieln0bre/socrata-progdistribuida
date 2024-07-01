@@ -13,5 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Define environment variable
 ENV NAME World
 
-# Install pymongo[srv]
-RUN python -m pip install "pymongo[srv]"
+# Copie o arquivo accidents.py para o diretório de trabalho
+COPY accidents.py .
+
+# Comando padrão para executar o Flask quando o container iniciar
+CMD ["python", "accidents.py"]
