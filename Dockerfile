@@ -16,5 +16,8 @@ RUN mkdir -p /app/data && chmod -R 777 /app/data
 # Define environment variable
 ENV NAME World
 
-# Run accidents.py when the container launches
-CMD ["python", "accidents.py"]
+# Set PYTHONPATH
+ENV PYTHONPATH "${PYTHONPATH}:/app"
+
+# Run app.py when the container launches
+CMD ["python", "src/app.py"]
