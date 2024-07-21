@@ -4,8 +4,17 @@ import pandas as pd
 import schedule
 import time
 import threading
-from src.data_access import DataAccessLayer
-from src.socrata_client import SocrataClient
+from data_access import DataAccessLayer
+from socrata_client import SocrataClient
+
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+APP_DIR = os.path.join(ROOT_DIR, 'app')
+DATA_DIR = os.path.join(APP_DIR, 'data')
+
+if not os.path.exists(APP_DIR):
+    os.makedirs(APP_DIR)
+if not os.path.exists(DATA_DIR):
+    os.makedirs(DATA_DIR)
 
 app = Flask(__name__)
 data_access_layer = DataAccessLayer()
