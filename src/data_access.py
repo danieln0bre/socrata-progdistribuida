@@ -14,7 +14,8 @@ class DataAccessLayer:
     @staticmethod
     def load_existing_data():
         DataAccessLayer.ensure_data_dir_exists()
-        if os.path.exists(DataAccessLayer.FILE_PATH) and os.path.getsize(DataAccessLayer.FILE_PATH) > 0:
+        if (os.path.exists(DataAccessLayer.FILE_PATH) and 
+                os.path.getsize(DataAccessLayer.FILE_PATH) > 0):
             try:
                 df = pd.read_csv(DataAccessLayer.FILE_PATH)
 
