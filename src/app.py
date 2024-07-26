@@ -119,6 +119,16 @@ def filter_data():
     except Exception as e:
         logger.error(f"Error filtering data: {e}")
         return jsonify({"status": f"Error filtering data: {e}"}), 500
+    
+@app.route('/accidents/total', methods=['GET'])
+def get_total_accidents():
+    try:
+        data = DataAccessLayer.get_data()
+        total_accidents = len(data)
+        return jsonify({"total_accidents": total_accidents}), 200
+    except Exception as e:
+        logger.error(f"Error retrieving total accidents: {e}")
+        return jsonify({"status": f"Error retrieving total accidents: {e}"}), 500
 
 def job():
     try:
